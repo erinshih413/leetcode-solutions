@@ -31,29 +31,36 @@ For each problem solved, I document my thought process using the following templ
 - **Topics:** Array, Two Pointers, Hash Table, etc.
 - **LeetCode Link:** [Problem Link](#)
 
+---
+
 #### 1. Understand
-- **Inputs:** ...
-- **Outputs:** ...
-- **Constraints / Edge Cases:** Empty input, negative numbers, single element, etc.
+
+Clarify problem requirements, ask edge-case questions, define inputs/outputs.
 
 #### 2. Match
-- Pattern/Data Structure: ...
 
-#### 3. Plan (Pseudocode)
-1. Initialize variables...
-2. Loop through input...
-3. Return result...
+Identify patterns, data structures, and algorithmic strategies.
+
+#### 3. Plan
+
+Write pseudocode and outline high-level logic before coding.
 
 #### 4. Implementation
-- Code implementation here
+
+Write clean, efficient code and speak thoughts out loud.
 
 #### 5. Review
-- Case 1: input -> output
-- Edge Case: input -> output
 
-#### 6. Evaluation
+Dry-run the code line-by-line using test cases and fix edge-case bugs.
+
+#### 6. Complexity Evaluation
+
+Calculate Time and Space Complexity and discuss tradeoffs.
+
 - Time Complexity: $O(...)$
 - Space Complexity: $O(...)$
+
+---
 
 ```
 
