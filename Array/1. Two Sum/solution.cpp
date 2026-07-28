@@ -51,3 +51,34 @@ public:
         return {};
     }
 };
+
+/**
+ * Outcome: Runtime: 0 ms (Beats 100.00%) | Memory: 14.82 MB (Beats 39.43%)
+ * 
+ * Key Learning:
+ * - Uses a Hash Map (std::unordered_map) to look up the complement (target - nums[i]) 
+ *   in O(1) average time, reducing the algorithm from O(N²) down to O(N).
+ * - Single-pass approach checks for the complement before adding the current element 
+ *   to avoid self-matching.
+ * 
+ * Complexity:
+ * - Time: O(N) — Passes through the array at most once; hash map lookups are O(1) average.
+ * - Space: O(N) — Hash map stores up to N elements in the worst case.
+ **/
+class Solution {
+public:
+    vector<int> twoSum(vector<int>& nums, int target) {
+        
+        std::unordered_map<int, int> map;
+
+        for (int i = 0; i < nums.size(); i++) {
+            int complement = target - nums[i];
+
+            if (map.find(complement) != map.end()) {
+                return {map[complement], i};
+            }
+            map[nums[i]] = i;
+        }
+        return {};
+    }
+};
