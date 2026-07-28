@@ -23,7 +23,6 @@ When solving problems, I follow the **UMPIRE** framework to ensure structured pr
 
 For each problem solved, I document my thought process using the following template:
 
-```markdown
 ### [Problem Number]. [Problem Name]
 
 - **Difficulty:** Easy / Medium / Hard
