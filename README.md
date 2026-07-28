@@ -73,7 +73,7 @@ An edge case is a problem, scenario, or set of input data that occurs at an extr
 
 Identifying and handling edge cases ensures that your code is robust, defensive, and handles unusual inputs gracefully (such as returning an empty result, throwing a clear exception, or processing boundary values correctly) rather than crashing or causing memory leaks.
 
-#### Common Types of Edge Cases
+### Common Types of Edge Cases
 
 | Category | Description | Example Scenarios |
 | :--- | :--- | :--- |
