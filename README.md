@@ -24,7 +24,7 @@ When solving problems, I follow the **UMPIRE** framework to ensure structured pr
 
 For each problem solved, I document my thought process using the following template:
 
-##### [Problem Number]. [Problem Name]
+#### [Problem Number]. [Problem Name]
 
 - **Difficulty:** Easy / Medium / Hard
 - **Topics:** Array, Two Pointers, Hash Table, etc.
@@ -44,14 +44,14 @@ For each problem solved, I document my thought process using the following templ
 3. Return result...
 
 #### 4. Implementation
-Code implementation here
+- Code implementation here
 
 #### 5. Review
-Case 1: input -> output
-Edge Case: input -> output
+- Case 1: input -> output
+- Edge Case: input -> output
 
 #### 6. Evaluation
-Time Complexity: $O(...)$
-Space Complexity: $O(...)$
+- Time Complexity: $O(...)$
+- Space Complexity: $O(...)$
 
 ---
