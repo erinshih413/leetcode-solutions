@@ -1,6 +1,6 @@
 # LeetCode Solutions
 
-Welcome to my LeetCode problem-solving repository! This repo contains my solutions to various data structure and algorithm challenges, structured using the **UMPIRE Method** learning from CodePath to prepare for Technical Coding Interviews.
+Welcome to my LeetCode problem-solving repository! This repo contains my solutions to various data structure and algorithm challenges, structured using the **UMPIRE Method** learning from [CodePath](https://www.codepath.org/) to prepare for coding interviews.
 
 ---
 
