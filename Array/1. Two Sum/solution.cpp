@@ -8,6 +8,10 @@
  * All-Pairs Loop Rules:
  * - Outer (i): 0 to n - 2 (stops before last element; j handles the end).
  * - Inner (j): i + 1 to n - 1 (starts strictly after i to prevent self-pairing/duplicates).
+ * 
+ * Complexity:
+ * - Time: O(N²) — Checks all N*(N-1)/2 unique pairs in the worst case.
+ * - Space: O(1) — Uses constant extra memory beyond the returned vector.
  **/
 class Solution {
 public:
