@@ -65,3 +65,23 @@ Calculate Time and Space Complexity and discuss tradeoffs.
 ```
 
 ---
+
+## Notes
+
+### What is an Edge Case?
+An edge case is a problem, scenario, or set of input data that occurs at an extreme boundary of an operating limit. In software engineering and coding interviews, edge cases represent situations where the code is most likely to fail or produce unexpected results because the input deviates from typical, "happy path" usage.
+
+Identifying and handling edge cases ensures that your code is robust, defensive, and handles unusual inputs gracefully (such as returning an empty result, throwing a clear exception, or processing boundary values correctly) rather than crashing or causing memory leaks.
+
+#### Common Types of Edge Cases
+
+| Category | Description | Example Scenarios |
+| :--- | :--- | :--- |
+| **Empty or Null Inputs** | Missing, uninitialized, or empty collections/structures. | `nums = []`, `str = ""`, or `head = null` |
+| **Single-Element Inputs** | Minimum possible input size or length. | `nums = [1]` or a single-node tree/list |
+| **Boundaries & Limits** | Values at the exact maximum or minimum numerical thresholds. | Extreme array lengths ($10^5$), integer limits (`INT_MAX`, `INT_MIN`) |
+| **Duplicates & Repetition** | Datasets containing identical elements or uniform repeated values. | `nums = [2, 2, 2, 2]`, target = 4 |
+| **Special Values / Signs** | Negative numbers, zeros, floating-point precision, or non-alphanumeric chars. | `nums = [-5, 0, 5]`, strings containing whitespace/punctuation |
+| **Ordering & Structure** | Inputs that are already fully ordered, reverse-sorted, or cyclic. | Searching in a pre-sorted array, linked lists with cycles |
+
+---
