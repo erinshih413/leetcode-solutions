@@ -52,15 +52,6 @@ Write clean, efficient code and speak thoughts out loud.
 
 Dry-run the code line-by-line using test cases and fix edge-case bugs.
 
-* **Test Case 1:** `nums = [1, 2, 3, 1]`
-  * *Sort:* `nums` becomes `[1, 1, 2, 3]`
-  * *Loop i=0:* `nums[0] (1) == nums[1] (1)` $\rightarrow$ Match found, return `true`. 
-* **Test Case 2:** `nums = [1, 2, 3, 4]`
-  * *Sort:* `nums` remains `[1, 2, 3, 4]`
-  * *Loop:* `1!=2`, `2!=3`, `3!=4`. Loop ends, return `false`.
-* **Edge Case:** `nums = [5]`
-  * Loop condition `i < nums.size() - 1` becomes `i < 0`. Loop never runs, returns `false` (correct behavior).
-
 ### (E) Evaluation
 
 Calculate Time and Space Complexity and discuss tradeoffs.
