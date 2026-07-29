@@ -33,9 +33,9 @@ For each problem solved, I document my thought process using the following templ
 
 ---
 
-#### **1. Understand**: Clarify problem requirements, ask edge-case questions, define inputs/outputs.
+#### 1. Understand
 
-
+Clarify problem requirements, ask edge-case questions, define inputs/outputs.
 
 #### 2. Match
 
