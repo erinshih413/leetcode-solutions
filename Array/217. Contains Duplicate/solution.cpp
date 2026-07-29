@@ -50,3 +50,42 @@ public:
         return false;
     }
 };
+
+
+/**
+ * Outcome: Runtime: 20 ms (Beats 82.60%) | Memory: 82.60 MB (Beats 85.12%)
+ * 
+ * Key Learning:
+ * - In-place sorting places identical elements adjacent to each other, eliminating the need for extra data structures.
+ * - Spatial Locality & CPU Cache Efficiency: Contiguous memory access during std::sort and linear iteration outperforms pointer-heavy hash tables in practice.
+ * 
+ * Why Memory is Lower (82.6 MB vs 111.4 MB):
+ * - No dynamic heap allocation: Modifying nums in-place avoids creating dynamic nodes/buckets required by std::unordered_set.
+ * - Minimal stack overhead: std::sort uses only O(log N) auxiliary stack space for recursion.
+ * 
+ * Why Runtime is Faster (20 ms vs 75 ms):
+ * - High CPU Cache Hit Rate: Operating on a contiguous vector allows the CPU to prefetch data effectively into L1/L2 caches.
+ * - Zero Hash Overhead: Avoids computing hash functions, modulo index math, and pointer dereferencing per element.
+ * - Simple Instructions: Checking adjacent elements (nums[i] == nums[i + 1]) executes very quickly in CPU pipelines.
+ * 
+ * Complexity:
+ * - Time: O(N log N) — Dominated by std::sort; adjacent comparison loop takes O(N) linear time.
+ * - Space: O(1) auxiliary — In-place array modification using O(log N) recursion stack space.
+ **/
+
+class Solution {
+public:
+    bool containsDuplicate(std::vector<int>& nums) {
+        // Step 1: Sort the array in-place
+        std::sort(nums.begin(), nums.end());
+
+        // Step 2: Look for adjacent duplicates
+        for (int i = 0; i < (int)nums.size() - 1; i++) {
+            if (nums[i] == nums[i + 1]) {
+                return true;
+            }
+        }
+
+        return false;
+    }
+};
