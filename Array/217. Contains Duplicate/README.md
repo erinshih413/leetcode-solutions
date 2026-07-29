@@ -39,12 +39,18 @@ Calculate Time and Space Complexity and discuss tradeoffs.
 #### Note:
 
 - Comparison table between `std::unordered_map` and `std::unordered_set` in C++:
-
-| Category | `std::unordered_map<Key, Value>` | `std::unordered_set<Key>` |
+- 
+| Feature / Operation | `std::unordered_map<Key, Value>` | `std::unordered_set<Key>` |
 | :--- | :--- | :--- |
 | **Data Stored** | Key-Value pairs (`std::pair<const Key, Value>`) | Keys only (unique elements) |
-| **Primary Use Case** | Associative lookups mapping a unique key to a value (e.g., frequency counting, index mapping, dictionary lookups) | Tracking existence, uniqueness, or visited items (e.g., checking if an item was seen before) |
-| **Template Arguments** | Requires **at least 2** types: `std::unordered_map<Key, Value>` *(optional 3rd & 4th for Hash and KeyEqual)* | Requires **at least 1** type: `std::unordered_set<Key>` *(optional 2nd & 3rd for Hash and KeyEqual)* |
-| **Adding Items** | • `map[key] = value` *(Inserts or updates)*<br>• `map.insert({key, value})`<br>• `map.emplace(key, value)` | • `set.insert(element)`<br>• `set.emplace(element)`<br>*(Note: `[]` operator is not supported)* |
-| **Searching Items** | • `map.find(key)` *(Returns iterator to `std::pair`)*<br>• `map.contains(key)` *(C++20, returns `bool`)*<br>• `map.count(key)` *(Returns `1` or `0`)*<br>• `map.at(key)` / `map[key]` *(Accesses value directly)* | • `set.find(element)` *(Returns iterator to element)*<br>• `set.contains(element)` *(C++20, returns `bool`)*<br>• `set.count(element)` *(Returns `1` or `0`)* |
-| **Deleting Items** | • `map.erase(key)` *(Removes entry by key)*<br>• `map.erase(iterator)` *(Removes entry at position)*<br>• `map.clear()` *(Removes all entries)* | • `set.erase(element)` *(Removes element by value)*<br>• `set.erase(iterator)` *(Removes element at position)*<br>• `set.clear()` *(Removes all elements)* |
+| **Primary Use Cases** | Frequency/count tracking, index/position caching, dictionary/lookup tables, memoization | Uniqueness checks, tracking visited nodes/states, set intersection/difference |
+| **Template Arguments** | `std::unordered_map<Key, Value, Hash, KeyEqual>` | `std::unordered_set<Key, Hash, KeyEqual>` |
+| **Adding Items** | • `map[key] = value`<br>• `map.insert({key, value})`<br>• `map.emplace(key, value)` | • `set.insert(element)`<br>• `set.emplace(element)` |
+| **Searching Items** | • `map.find(key)`<br>• `map.contains(key)` *(C++20)*<br>• `map.count(key)`<br>• `map.at(key)` / `map[key]` | • `set.find(element)`<br>• `set.contains(element)` *(C++20)*<br>• `set.count(element)` |
+| **Deleting Items** | • `map.erase(key)`<br>• `map.erase(iterator)`<br>• `map.clear()` | • `set.erase(element)`<br>• `set.erase(iterator)`<br>• `set.clear()` |
+| **Comparing Tables (`==` / `!=`)** | Returns `true` if both maps have the same number of keys and matching key-value pairs | Returns `true` if both sets have the same number of elements and identical contents |
+| **Custom Comparison / Types** | Requires custom `std::hash` specialization and `operator==` for custom `Key` types | Requires custom `std::hash` specialization and `operator==` for custom `Key` types |
+| **Range-Based Iteration** | Iterates over `std::pair<const Key, Value>` (`for (auto& [key, val] : map)`) | Iterates over `const Key` directly (`for (const auto& elem : set)`) |
+| **Modifying Elements** | Keys are `const` (immutable), but values **can** be modified in place (`map[key]++`) | Keys are `const` (immutable); to change an element, you must erase and re-insert it |
+| **Extract / Move Node *(C++17)*** | `auto node = map.extract(key);` *(Allows moving keys without reallocating memory)* | `auto node = set.extract(element);` *(Allows moving elements without reallocating memory)* |
+| **Set Operations (Union / Intersection)** | Not natively suited; must be implemented manually by comparing keys | Easily performed using algorithms like `std::set_intersection` (with sorted copies) or manual loops |
