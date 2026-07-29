@@ -1,4 +1,4 @@
-#### 217. Contains Duplicate
+## 217. Contains Duplicate
 
 - **Difficulty:** Easy
 - **Topics:** Array, Hash Table, Sorting
