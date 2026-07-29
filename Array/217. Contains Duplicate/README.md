@@ -64,7 +64,7 @@ Calculate Time and Space Complexity and discuss tradeoffs.
 #### Note:
 
 - Comparison table between `std::unordered_map` and `std::unordered_set` in C++:
-- 
+
 | Feature / Operation | `std::unordered_map<Key, Value>` | `std::unordered_set<Key>` |
 | :--- | :--- | :--- |
 | **Data Stored** | Key-Value pairs (`std::pair<const Key, Value>`) | Keys only (unique elements) |
