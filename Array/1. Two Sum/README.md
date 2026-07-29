@@ -8,7 +8,7 @@
 
 ## UMPIRE Method
 
-### Understand
+### (U) Understand
 
 Clarify problem requirements, ask edge-case questions, define inputs/outputs.
 
@@ -20,7 +20,7 @@ Clarify problem requirements, ask edge-case questions, define inputs/outputs.
 6. Minimum Array Length? $N \ge 2$.
 
 
-### Match
+### (M) Match
 
 Identify patterns, data structures, and algorithmic strategies.
 
@@ -35,7 +35,7 @@ Identify patterns, data structures, and algorithmic strategies.
   * For each element `x`, calculate complement = `target - x` and check if it exists in the map.
   * Time: $O(n)$, Space: $O(n)$.
 
-### Plan
+### (P) Plan
 
 Write pseudocode and outline high-level logic before coding.
 
@@ -48,17 +48,17 @@ Write pseudocode and outline high-level logic before coding.
      * **If absent:** Insert `seen[num] = i`.
 3. Return an empty array if no pair is found.
 
-### Implementation
+### (I) Implementation
 
 Write clean, efficient code and speak thoughts out loud.
 
 *(Refer to `solution.cpp` for code implementation)*
 
-### Review
+### (R) Review
 
 Dry-run the code line-by-line using test cases and fix edge-case bugs.
 
-### Evaluation
+### (E) Evaluation
 
 Calculate Time and Space Complexity and discuss tradeoffs.
 * **Time Complexity:** $O(n)$ — We perform a single pass through the array. Hash map search and insertion operations take $O(1)$ time on average.
