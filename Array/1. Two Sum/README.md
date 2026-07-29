@@ -6,9 +6,7 @@
 
 ---
 
-#### 1. Understand
-
-Clarify problem requirements, ask edge-case questions, define inputs/outputs.
+#### **1. Understand**: Clarify problem requirements, ask edge-case questions, define inputs/outputs.
 
 * **Goal:** Given an array of integers `nums` and an integer `target`, return the indices of the two numbers that add up to `target`.
 * **Inputs:** `nums` (Array of integers), `target` (Integer).
