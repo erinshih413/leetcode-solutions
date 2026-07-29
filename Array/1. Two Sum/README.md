@@ -6,6 +6,8 @@
 
 ---
 
+#### UMPIRE Method
+
 ### Understand
 
 Clarify problem requirements, ask edge-case questions, define inputs/outputs.
