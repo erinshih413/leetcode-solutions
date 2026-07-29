@@ -1,4 +1,5 @@
 /**
+ * Method: Brute Force
  * Outcome: Time Limit Exceeded
  * 
  * Key Learning:
@@ -9,7 +10,6 @@
  * - Time: O(N²) — Checks all N*(N-1)/2 unique pairs in the worst case.
  * - Space: O(1) — Uses constant extra memory.
  **/
-
 class Solution {
 public:
     bool containsDuplicate(vector<int>& nums) {
@@ -26,6 +26,7 @@ public:
 };
 
 /**
+ * Method: Hash Set (std::unordered_set)
  * Outcome: Runtime: 75 ms (Beats 28.90%) | Memory: 111.41 MB (Beats 15.38%)
  * 
  * Key Learning:
@@ -53,6 +54,7 @@ public:
 
 
 /**
+ * Method: Sorting (std::sort)
  * Outcome: Runtime: 20 ms (Beats 82.60%) | Memory: 82.60 MB (Beats 85.12%)
  * 
  * Key Learning:
