@@ -1,38 +1,72 @@
 #### 217. Contains Duplicate
 
 - **Difficulty:** Easy
-- **Topics:** Array, Two Pointers, Hash Table
+- **Topics:** Array, Hash Table, Sorting
 - **LeetCode Link:** [217. Contains Duplicate](https://leetcode.com/problems/contains-duplicate/description/)
 
 ---
 
-#### 1. Understand
+## UMPIRE Method
+
+### (U) Understand
 
 Clarify problem requirements, ask edge-case questions, define inputs/outputs.
 
+1. **Can the array be empty or have only one element?** The constraints state $1 \le \text{nums.length} \le 10^5$. If the length is 1, it should return `false` as no duplicates can exist.
+2. **Can array elements be negative?** Yes ($-10^9 \le \text{nums}[i] \le 10^9$).
+3. **Are there memory constraints?** Yes, this dictates whether we should use extra memory for speed (Hash Set) or save memory at the cost of slight speed reduction (Sorting).
+4. **Do we need to return the duplicate value itself?** No, just a boolean (`true` or `false`).
 
-#### 2. Match
+### (M) Match
 
 Identify patterns, data structures, and algorithmic strategies.
 
-#### 3. Plan
+* **Brute Force:**
+  * Nested loops checking every possible pair $(i, j)$.
+  * Time: $O(n^2)$, Space: $O(1)$. (Will result in Time Limit Exceeded).
+* **Hash Set (Optimal for Time):**
+  * Store visited numbers in a hash set (`std::unordered_set<int>`).
+  * For each element, check if it already exists in the set.
+  * Time: $O(n)$ average, Space: $O(n)$.
+* **Sorting (Optimal for Space & Cache Locality):**
+  * Sort elements in-place. Any duplicates will end up adjacent to each other.
+  * Time: $O(n \log n)$, Space: $O(1)$ auxiliary.
 
-Write pseudocode and outline high-level logic before coding.
+### (P) Plan
 
-#### 4. Implementation
+Write pseudocode and outline high-level logic before coding (focusing on the **Sorting** approach).
+
+1. Use standard library functions to sort the `nums` array in-place.
+2. Loop through `nums` from index $0$ to $n-2$.
+   * Check if the current element equals the adjacent next element (`nums[i] == nums[i + 1]`).
+   * **If equal:** We found a duplicate, return `true`.
+3. If the loop completes without finding any adjacent matches, return `false`.
+
+### (I) Implementation
 
 Write clean, efficient code and speak thoughts out loud.
 
-#### 5. Review
+*(Refer to `solution.cpp` for code implementation)*
+
+### (R) Review
 
 Dry-run the code line-by-line using test cases and fix edge-case bugs.
 
-#### 6. Complexity Evaluation
+* **Test Case 1:** `nums = [1, 2, 3, 1]`
+  * *Sort:* `nums` becomes `[1, 1, 2, 3]`
+  * *Loop i=0:* `nums[0] (1) == nums[1] (1)` $\rightarrow$ Match found, return `true`. 
+* **Test Case 2:** `nums = [1, 2, 3, 4]`
+  * *Sort:* `nums` remains `[1, 2, 3, 4]`
+  * *Loop:* `1!=2`, `2!=3`, `3!=4`. Loop ends, return `false`.
+* **Edge Case:** `nums = [5]`
+  * Loop condition `i < nums.size() - 1` becomes `i < 0`. Loop never runs, returns `false` (correct behavior).
+
+### (E) Evaluation
 
 Calculate Time and Space Complexity and discuss tradeoffs.
 
-- Time Complexity: $O(...)$
-- Space Complexity: $O(...)$
+* **Time Complexity:** $O(n \log n)$ — The dominant operation is sorting the array (`std::sort`). The subsequent linear scan only takes $O(n)$ time.
+* **Space Complexity:** $O(1)$ auxiliary — We modify the array in-place, requiring no extra data structures like hash sets. Note that `std::sort` may use $O(\log n)$ stack space for recursion under the hood, but it requires significantly less memory than the $O(n)$ dynamic allocations needed for a hash table.
 
 ---
 
